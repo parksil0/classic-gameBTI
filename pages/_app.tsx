@@ -1,13 +1,18 @@
 import type { AppProps } from 'next/app';
 import { ThemeProvider } from '@react95/core';
-import '@react95/icons/icons.css';
+import Head from 'next/head';
 
-function MyApp({ Component, pageProps }: AppProps) {
+const MyApp = ({ Component, pageProps }: AppProps) => {
 	return (
 		<ThemeProvider>
-			<Component {...pageProps} />
+			<>
+				<Head>
+					<title>classic gameBTI!</title>
+				</Head>
+				<Component {...pageProps} />
+			</>
 		</ThemeProvider>
 	);
-}
+};
 
 export default MyApp;

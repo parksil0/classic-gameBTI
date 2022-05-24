@@ -6,9 +6,8 @@ const withTM = require('next-transpile-modules')([
 	'@react95/icons',
 ]);
 
-const nextConfig = withTM({
+const nextConfig = {
 	reactStrictMode: true,
-});
+};
 
-module.exports = nextConfig;
-module.exports = withTM(withFonts());
+module.exports = withTM(withFonts(nextConfig));
