@@ -33,10 +33,20 @@
 	},
 	"ignorePatterns": ["node_modules/", ".next/*"],
 	"rules": {
-		"prettier/prettier": [
+		"prettier/prettier": ["error"],
+		"react/function-component-definition": [
+			2,
+			{ "namedComponents": "arrow-function" }
+		],
+		"arrow-body-style": "off",
+		"react/jsx-filename-extension": [
+			1,
+			{ "extensions": [".js", ".jsx", ".ts", ".tsx"] }
+		],
+		"react/jsx-props-no-spreading": [
 			"error",
 			{
-				"endOfLine": "auto"
+				"custom": "ignore"
 			}
 		]
 	},
