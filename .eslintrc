@@ -25,10 +25,7 @@
 			"version": "detect"
 		},
 		"import/resolver": {
-			"node": {
-				"extensions": [".js", ".jsx", ".ts", ".tsx"],
-				"moduleDirectory": [".", "node_modules"]
-			}
+			"typescript": {}
 		}
 	},
 	"ignorePatterns": ["node_modules/", ".next/*"],
@@ -47,6 +44,16 @@
 			"error",
 			{
 				"custom": "ignore"
+			}
+		],
+		"import/extensions": [
+			"error",
+			"ignorePackages",
+			{
+				"js": "never",
+				"jsx": "never",
+				"ts": "never",
+				"tsx": "never"
 			}
 		]
 	},
