@@ -1,9 +1,13 @@
 import type { AppProps } from 'next/app';
-import { ThemeProvider } from '@react95/core';
 import Head from 'next/head';
 import { useRouter } from 'next/router';
 import { useEffect } from 'react';
+import '@kfonts/neodgm';
+import { Global, ThemeProvider } from '@emotion/react';
+
 import * as gtag from '@/utils/gtag';
+import { globalStyles } from '@/styles/globalStyles';
+import theme from '@/styles/theme';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
 	const router = useRouter();
@@ -19,13 +23,12 @@ const MyApp = ({ Component, pageProps }: AppProps) => {
 	}, [router.events]);
 
 	return (
-		<ThemeProvider>
-			<>
-				<Head>
-					<title>classic gameBTI!</title>
-				</Head>
-				<Component {...pageProps} />
-			</>
+		<ThemeProvider theme={theme}>
+			<Head>
+				<title>classic gameBTI!</title>
+			</Head>
+			<Global styles={globalStyles} />
+			<Component {...pageProps} />
 		</ThemeProvider>
 	);
 };
