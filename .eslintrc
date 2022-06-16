@@ -43,7 +43,8 @@
 		"react/jsx-props-no-spreading": [
 			"error",
 			{
-				"custom": "ignore"
+				"custom": "ignore",
+				"html": "ignore"
 			}
 		],
 		"import/extensions": [
@@ -55,7 +56,8 @@
 				"ts": "never",
 				"tsx": "never"
 			}
-		]
+		],
+		"import/prefer-default-export": "off"
 	},
 	"globals": {
 		"React": "writable",
