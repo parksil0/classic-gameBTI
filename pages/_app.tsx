@@ -10,27 +10,27 @@ import { globalStyles } from '@/styles/globalStyles';
 import theme from '@/styles/theme';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-	const router = useRouter();
+  const router = useRouter();
 
-	useEffect(() => {
-		const handleRouteChange = (url: URL) => {
-			gtag.pageview(url);
-		};
-		router.events.on('routeChangeComplete', handleRouteChange);
-		return () => {
-			router.events.off('routeChangeComplete', handleRouteChange);
-		};
-	}, [router.events]);
+  useEffect(() => {
+    const handleRouteChange = (url: URL) => {
+      gtag.pageview(url);
+    };
+    router.events.on('routeChangeComplete', handleRouteChange);
+    return () => {
+      router.events.off('routeChangeComplete', handleRouteChange);
+    };
+  }, [router.events]);
 
-	return (
-		<ThemeProvider theme={theme}>
-			<Head>
-				<title>classic gameBTI!</title>
-			</Head>
-			<Global styles={globalStyles} />
-			<Component {...pageProps} />
-		</ThemeProvider>
-	);
+  return (
+    <ThemeProvider theme={theme}>
+      <Head>
+        <title>classic gameBTI!</title>
+      </Head>
+      <Global styles={globalStyles} />
+      <Component {...pageProps} />
+    </ThemeProvider>
+  );
 };
 
 export default MyApp;
