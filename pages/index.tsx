@@ -1,4 +1,5 @@
 import type { NextPage } from 'next';
+
 import Button from '@/components/common/Button';
 import Text from '@/components/common/Text';
 

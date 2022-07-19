@@ -1,6 +1,7 @@
 import styled from '@emotion/styled';
-import { RemoveAllOptionalProps } from '@/types/util';
-import { TextProps } from './index.types';
+
+import type { RemoveAllOptionalProps } from '@/types/util';
+import type { TextProps } from './index.types';
 
 interface Props extends RemoveAllOptionalProps<TextProps> {}
 
