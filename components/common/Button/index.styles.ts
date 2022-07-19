@@ -12,9 +12,9 @@ export const Button = styled.button<Props>`
       border-radius: ${radius}px;
     `}
 
-  background-color:${({ theme, backgroundColor }) =>
-    theme.color[backgroundColor]};
-
   padding: ${({ paddingTop, paddingRight, paddingBottom, paddingLeft }) =>
     `${paddingTop}px ${paddingRight}px ${paddingBottom}px ${paddingLeft}px;`};
+
+  background-color: ${({ theme, backgroundColor }) =>
+    theme.color[backgroundColor]};
 `;
