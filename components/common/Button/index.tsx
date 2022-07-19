@@ -1,29 +1,26 @@
-import { ButtonHTMLAttributes, forwardRef, ReactNode, Ref } from 'react';
-import theme from '@/styles/theme';
+import {
+  ButtonHTMLAttributes,
+  forwardRef,
+  PropsWithChildren,
+  Ref,
+} from 'react';
 import * as Styled from './index.styles';
+import { ButtonProps } from './index.types';
 
-interface Props extends ButtonHTMLAttributes<HTMLButtonElement> {
-  radius?: number;
-  backgroundColor?: keyof typeof theme.colors;
-  paddingTop?: number;
-  paddingRight?: number;
-  paddingBottom?: number;
-  paddingLeft?: number;
-  children: ReactNode;
-}
+interface Props extends ButtonProps, ButtonHTMLAttributes<HTMLButtonElement> {}
 
 const Button = forwardRef(
   (
     {
       backgroundColor = 'inherit',
       children,
-      radius,
+      radius = 0,
       paddingTop = 10,
       paddingRight = 30,
       paddingBottom = 10,
       paddingLeft = 30,
       ...rest
-    }: Props,
+    }: PropsWithChildren<Props>,
     forwardedRef: Ref<HTMLButtonElement>,
   ) => {
     return (

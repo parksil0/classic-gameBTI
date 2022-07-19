@@ -1,15 +1,9 @@
-import theme from '@/styles/theme';
+import { RemoveAllOptionalProps } from '@/types/util';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { ButtonProps } from './index.types';
 
-interface Props {
-  radius?: number;
-  backgroundColor?: keyof typeof theme.colors;
-  paddingTop: number;
-  paddingRight: number;
-  paddingBottom: number;
-  paddingLeft: number;
-}
+interface Props extends RemoveAllOptionalProps<ButtonProps> {}
 
 export const Button = styled.button<Props>`
   ${({ radius }) =>
@@ -18,11 +12,8 @@ export const Button = styled.button<Props>`
       border-radius: ${radius}px;
     `}
 
-  ${({ theme, backgroundColor }) =>
-    backgroundColor &&
-    css`
-      background-color: ${theme.colors[backgroundColor]};
-    `};
+  background-color:${({ theme, backgroundColor }) =>
+    theme.color[backgroundColor]};
 
   padding: ${({ paddingTop, paddingRight, paddingBottom, paddingLeft }) =>
     `${paddingTop}px ${paddingRight}px ${paddingBottom}px ${paddingLeft}px;`};
