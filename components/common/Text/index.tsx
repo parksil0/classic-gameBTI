@@ -1,16 +1,21 @@
 import theme from '@/styles/theme';
-import { ElementType, forwardRef, Ref } from 'react';
+import {
+  ElementType,
+  forwardRef,
+  HTMLAttributes,
+  PropsWithChildren,
+  Ref,
+} from 'react';
 import * as Styled from './index.styles';
+import type { TextProps } from './index.types';
 
 interface Props
-  extends React.HTMLAttributes<
-    HTMLHeadingElement | HTMLParagraphElement | HTMLSpanElement
-  > {
-  children: React.ReactNode;
-  fontWeight?: 400 | 700;
-  color?: keyof typeof theme.colors;
-  variant?: 'pageHeading' | 'heading' | 'subHeading' | 'body' | 'caption';
+  extends HTMLAttributes<
+      HTMLHeadingElement | HTMLParagraphElement | HTMLSpanElement
+    >,
+    TextProps {
   as?: ElementType;
+  color?: keyof typeof theme.color;
 }
 
 const Text = forwardRef(
@@ -20,9 +25,9 @@ const Text = forwardRef(
       children,
       variant = 'body',
       color = 'gray_90',
-      fontWeight,
+      fontWeight = 400,
       ...rest
-    }: Props,
+    }: PropsWithChildren<Props>,
     forwardedRef: Ref<HTMLElement>,
   ) => {
     return (
