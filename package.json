@@ -8,7 +8,8 @@
     "start": "next start",
     "lint": "next lint",
     "type": "tsc --pretty --noEmit",
-    "stylelint": "stylelint **/*.styles.ts --fix"
+    "stylelint": "stylelint **/*.styles.ts --fix",
+    "prepare": "husky install"
   },
   "dependencies": {
     "@emotion/react": "^11.9.3",
@@ -35,6 +36,7 @@
     "eslint-plugin-jsx-a11y": "^6.5.1",
     "eslint-plugin-prettier": "^4.0.0",
     "eslint-plugin-react": "^7.30.0",
+    "husky": "^8.0.0",
     "postcss-syntax": "^0.36.2",
     "prettier": "^2.6.2",
     "stylelint": "^14.9.1",
