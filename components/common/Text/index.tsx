@@ -1,4 +1,3 @@
-import theme from '@/styles/theme';
 import {
   ElementType,
   forwardRef,
@@ -6,6 +5,7 @@ import {
   PropsWithChildren,
   Ref,
 } from 'react';
+import theme from '@/styles/theme';
 import * as Styled from './index.styles';
 import type { TextProps } from './index.types';
 

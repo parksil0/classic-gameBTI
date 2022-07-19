@@ -1,6 +1,6 @@
-import { RemoveAllOptionalProps } from '@/types/util';
 import { css } from '@emotion/react';
 import styled from '@emotion/styled';
+import { RemoveAllOptionalProps } from '@/types/util';
 import { ButtonProps } from './index.types';
 
 interface Props extends RemoveAllOptionalProps<ButtonProps> {}
