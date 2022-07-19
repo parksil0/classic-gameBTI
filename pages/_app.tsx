@@ -1,30 +1,21 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-import { useRouter } from 'next/router';
-import { useEffect } from 'react';
+
 import '@kfonts/neodgm';
 import { Global, ThemeProvider } from '@emotion/react';
 
-import * as gtag from '@/utils/gtag';
 import { globalStyles } from '@/styles/globalStyles';
 import theme from '@/styles/theme';
+import usePageView from '@/hooks/usePageView';
+import GoogleAnalytics from '@/components/Script/GoogleAnalytics';
 
 const MyApp = ({ Component, pageProps }: AppProps) => {
-  const router = useRouter();
-
-  useEffect(() => {
-    const handleRouteChange = (url: URL) => {
-      gtag.pageview(url);
-    };
-    router.events.on('routeChangeComplete', handleRouteChange);
-    return () => {
-      router.events.off('routeChangeComplete', handleRouteChange);
-    };
-  }, [router.events]);
+  usePageView();
 
   return (
     <ThemeProvider theme={theme}>
       <Head>
+        <GoogleAnalytics />
         <title>classic gameBTI!</title>
       </Head>
       <Global styles={globalStyles} />
