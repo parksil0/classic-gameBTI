@@ -1,5 +1,5 @@
 const theme = {
-  colors: {
+  color: {
     white: '#ffffff',
     inherit: 'inherit',
     gray_0: '#ffffff',
@@ -63,6 +63,20 @@ const theme = {
     dp_24:
       '0px 12px 24px rgba(58, 58, 68, 0.08), 0px 24px 48px rgba(90, 91, 106, 0.08)',
   },
-};
+  fontSize: {
+    pageHeading: '32px',
+    subHeading: '20px',
+    heading: '14px',
+    caption: '12px',
+    body: '14px',
+  },
+  lineHeight: {
+    pageHeading: '38px',
+    subHeading: '23px',
+    heading: '16px',
+    caption: '18px',
+    body: '21px',
+  },
+} as const;
 
 export default theme;

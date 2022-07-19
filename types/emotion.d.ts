@@ -1,9 +1,12 @@
 import theme from '@/styles/theme';
 
 export interface CustomTheme {
-  colors: typeof theme.colors;
+  color: typeof theme.color;
+  shadow: typeof theme.shadow;
+  fontSize: typeof theme.fontSize;
+  lineHeight: typeof theme.lineHeight;
 }
 
 declare module '@emotion/react' {
-  export interface Theme extends CustomTheme, Theme {}
+  export interface Theme extends CustomTheme {}
 }
