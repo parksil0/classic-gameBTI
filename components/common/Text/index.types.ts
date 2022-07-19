@@ -1,5 +1,5 @@
 import theme from '@/styles/theme';
-import { TextVariants } from '@/types/theme';
+import type { TextVariants } from '@/types/theme';
 
 type FontWeight = 100 | 200 | 300 | 400 | 500 | 600 | 700 | 800 | 900;
 

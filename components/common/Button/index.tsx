@@ -4,8 +4,9 @@ import {
   PropsWithChildren,
   Ref,
 } from 'react';
+
 import * as Styled from './index.styles';
-import { ButtonProps } from './index.types';
+import type { ButtonProps } from './index.types';
 
 interface Props extends ButtonProps, ButtonHTMLAttributes<HTMLButtonElement> {}
 

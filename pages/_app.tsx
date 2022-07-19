@@ -1,6 +1,5 @@
 import type { AppProps } from 'next/app';
 import Head from 'next/head';
-
 import '@kfonts/neodgm';
 import { Global, ThemeProvider } from '@emotion/react';
 
