@@ -82,7 +82,10 @@
         ]
       }
     ],
-    "import/newline-after-import": "error"
+    "import/newline-after-import": "error",
+    "@typescript-eslint/no-empty-function": "off",
+    "no-unused-vars": "off",
+    "@typescript-eslint/no-unused-vars": ["error"]
   },
   "globals": {
     "React": "writable",
