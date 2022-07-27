@@ -2,10 +2,10 @@ import type { PropsWithChildren } from 'react';
 import Image from 'next/image';
 
 import Text from '@/components/common/Text';
+import { ButtonCornerPositionsWrapper } from '@/components/common/Button/index.styles';
 import rivet from '@/assets/rivet.svg';
+import { BUTTON_CORNER_POSITIONS } from '@/constants/button';
 import * as Styled from './index.styles';
-import { RIVET_POSITION } from './index.constants';
-import type { Position } from './index.types';
 
 const Title = ({ children }: PropsWithChildren<unknown>) => {
   return (
@@ -14,10 +14,14 @@ const Title = ({ children }: PropsWithChildren<unknown>) => {
         <Text as="p" color="black" variant="subHeading">
           {children}
         </Text>
-        {(Object.keys(RIVET_POSITION) as Position[]).map((value) => (
-          <Styled.RivetWrapper key={value} position={value}>
+        {(
+          Object.keys(BUTTON_CORNER_POSITIONS) as Array<
+            keyof typeof BUTTON_CORNER_POSITIONS
+          >
+        ).map((value) => (
+          <ButtonCornerPositionsWrapper key={value} position={value}>
             <Image src={rivet} width={6} height={6} />
-          </Styled.RivetWrapper>
+          </ButtonCornerPositionsWrapper>
         ))}
       </Styled.TextBox>
     </Styled.Wrapper>
