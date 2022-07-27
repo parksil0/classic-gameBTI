@@ -1,13 +1,24 @@
-import { MbtiType } from '@/types/question';
+import type { MbtiType } from './index.types';
 
-interface Props {
+export const MBTI_TYPES = {
+  i: 'i',
+  e: 'e',
+  s: 's',
+  n: 'n',
+  t: 't',
+  f: 'f',
+  j: 'j',
+  p: 'p',
+} as const;
+
+interface QuestionProps {
   question: string;
   answer: {
     [key in MbtiType]?: string;
   };
 }
 
-export const Questions: Props[] = [
+export const Questions: QuestionProps[] = [
   {
     question: '게임팩이 생겼다! \n 같이 게임 하고싶은 사람은?',
     answer: {
