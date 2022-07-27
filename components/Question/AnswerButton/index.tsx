@@ -11,10 +11,18 @@ interface Props {
 }
 
 const AnswerButton = ({ mbtiType, children }: PropsWithChildren<Props>) => {
-  const { currentQuestion, setCurrentQuestion, setSelectedAnswers } =
-    useContext(QuestionContext);
+  const {
+    isFinished,
+    currentQuestion,
+    setCurrentQuestion,
+    setSelectedAnswers,
+  } = useContext(QuestionContext);
 
   const handleClickAnswer = () => {
+    if (isFinished) {
+      return;
+    }
+
     setSelectedAnswers((prev) => {
       const newSelectedAnswers = { ...prev };
 
@@ -24,9 +32,9 @@ const AnswerButton = ({ mbtiType, children }: PropsWithChildren<Props>) => {
     });
 
     if (currentQuestion === Questions.length) {
-      // TODO : api 통신 이후 결과 페이지로 이동
       return;
     }
+
     setCurrentQuestion((prev) => prev + 1);
   };
 
