@@ -23,13 +23,7 @@ const Question = () => {
     >
       <Header />
       <QuestionNumber>Q{currentQuestion}</QuestionNumber>
-      <Title>
-        {Questions[currentQuestion - 1].question.split('\n').map((value) => (
-          <span key={value}>
-            {value} <br />
-          </span>
-        ))}
-      </Title>
+      <Title>{Questions[currentQuestion - 1].question}</Title>
       {Object.entries(Questions[currentQuestion - 1].answer).map(
         ([mbtiType, answer]) => (
           <AnswerButton key={mbtiType} mbtiType={mbtiType as MbtiType}>
