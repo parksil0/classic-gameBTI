@@ -1,11 +1,21 @@
 import type { StaticImageData } from 'next/image';
 import styled from '@emotion/styled';
 
-export const Wrapper = styled.main<{ backgroundImage: StaticImageData }>`
-  width: 375px;
+interface WrapperProps {
+  charactersWithBricks: StaticImageData;
+  ground: StaticImageData;
+  sky: StaticImageData;
+}
+
+export const Wrapper = styled.main<WrapperProps>`
   height: 100vh;
   margin: 0 auto;
-  background-image: url(${({ backgroundImage }) => backgroundImage.src});
-  background-repeat: no-repeat;
-  background-size: 375px 812px;
+  background: ${({ charactersWithBricks, ground, sky }) =>
+    `
+      url(${charactersWithBricks.src}) center bottom 50px no-repeat, 
+      url(${ground.src}) bottom repeat-x, 
+      url(${sky.src}) left top / contain repeat-x
+    `};
+
+  background-color: #8ad1f0;
 `;
