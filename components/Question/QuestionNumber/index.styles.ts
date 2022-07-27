@@ -6,6 +6,7 @@ export const Wrapper = styled.div`
   margin-top: 73px;
 `;
 
+// TODO: theme에 색 추가
 export const TextBox = styled.div`
   display: flex;
 
@@ -13,6 +14,5 @@ export const TextBox = styled.div`
   height: 44px;
   align-items: center;
   justify-content: center;
-
   background: #935512;
 `;
