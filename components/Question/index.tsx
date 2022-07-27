@@ -1,6 +1,8 @@
 import { useContext } from 'react';
 
-import background from '@/assets/question-background2x.png';
+import ground from '@/assets/ground.png';
+import sky from '@/assets/sky.png';
+import charactersWithBricks from '@/assets/characters-with-bricks.png';
 import { QuestionContext } from '@/contexts/QuestionContext';
 import { MbtiType } from '@/types/question';
 import Header from './Header';
@@ -14,7 +16,11 @@ const Question = () => {
   const { currentQuestion } = useContext(QuestionContext);
 
   return (
-    <Styled.Wrapper backgroundImage={background}>
+    <Styled.Wrapper
+      ground={ground}
+      sky={sky}
+      charactersWithBricks={charactersWithBricks}
+    >
       <Header />
       <QuestionNumber>Q{currentQuestion}</QuestionNumber>
       <Title>
