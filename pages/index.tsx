@@ -1,16 +1,7 @@
-import type { NextPage } from 'next';
+import Main from '@/components/Main';
 
-import Button from '@/components/common/Button';
-import Text from '@/components/common/Text';
-
-const Home: NextPage = () => {
-  return (
-    <Button backgroundColor="teal_shade_light" radius={50}>
-      <Text as="h1" variant="pageHeading" color="white">
-        감정이입
-      </Text>
-    </Button>
-  );
+const MainPage = () => {
+  return <Main />;
 };
 
-export default Home;
+export default MainPage;
