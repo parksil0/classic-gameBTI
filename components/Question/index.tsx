@@ -4,13 +4,13 @@ import ground from '@/assets/ground.png';
 import sky from '@/assets/sky.png';
 import charactersWithBricks from '@/assets/characters-with-bricks.png';
 import { QuestionContext } from '@/contexts/QuestionContext';
-import { MbtiType } from '@/types/question';
 import Header from './Header';
 import QuestionNumber from './QuestionNumber';
 import Title from './Title';
 import * as Styled from './index.styles';
 import { Questions } from './index.constants';
 import AnswerButton from './AnswerButton';
+import { MbtiType } from './index.types';
 
 const Question = () => {
   const { currentQuestion } = useContext(QuestionContext);

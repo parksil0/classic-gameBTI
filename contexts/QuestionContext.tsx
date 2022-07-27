@@ -6,7 +6,8 @@ import {
   type PropsWithChildren,
   type SetStateAction,
 } from 'react';
-import type { SelectedAnswer } from '@/types/question';
+
+import type { SelectedAnswer } from '@/components/Question/index.types';
 
 const initialSelectedAnswer: SelectedAnswer = {
   i: 0,

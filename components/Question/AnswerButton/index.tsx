@@ -2,7 +2,7 @@ import { useContext, type PropsWithChildren } from 'react';
 
 import Text from '@/components/common/Text';
 import { QuestionContext } from '@/contexts/QuestionContext';
-import { type MbtiType } from '@/types/question';
+import { type MbtiType } from '../index.types';
 import { Questions } from '../index.constants';
 import * as Styled from './index.styles';
 
