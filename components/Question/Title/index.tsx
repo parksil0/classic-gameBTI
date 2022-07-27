@@ -14,8 +14,8 @@ const Title = ({ children }: PropsWithChildren<unknown>) => {
         <Text as="p" color="black" variant="subHeading">
           {children}
         </Text>
-        {Object.keys(RIVET_POSITION).map((value) => (
-          <Styled.RivetWrapper key={value} position={value as Position}>
+        {(Object.keys(RIVET_POSITION) as Position[]).map((value) => (
+          <Styled.RivetWrapper key={value} position={value}>
             <Image src={rivet} width={6} height={6} />
           </Styled.RivetWrapper>
         ))}
