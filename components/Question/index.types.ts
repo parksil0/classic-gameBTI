@@ -1,13 +1,4 @@
-export const MBTI_TYPES = {
-  i: 'i',
-  e: 'e',
-  s: 's',
-  n: 'n',
-  t: 't',
-  f: 'f',
-  j: 'j',
-  p: 'p',
-};
+import { MBTI_TYPES } from './index.constants';
 
 export type MbtiType = keyof typeof MBTI_TYPES;
 
