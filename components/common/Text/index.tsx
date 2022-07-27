@@ -27,6 +27,11 @@ const Text = forwardRef(
       variant = 'body',
       color = 'gray_90',
       fontWeight = 400,
+      marginTop = 0,
+      marginRight = 0,
+      marginBottom = 0,
+      marginLeft = 0,
+      textAlign = 'left',
       ...rest
     }: PropsWithChildren<Props>,
     forwardedRef: Ref<HTMLElement>,
@@ -38,6 +43,11 @@ const Text = forwardRef(
         color={color}
         fontWeight={fontWeight}
         ref={forwardedRef}
+        marginTop={marginTop}
+        marginRight={marginRight}
+        marginBottom={marginBottom}
+        marginLeft={marginLeft}
+        textAlign={textAlign}
         {...rest}
       >
         {children}
