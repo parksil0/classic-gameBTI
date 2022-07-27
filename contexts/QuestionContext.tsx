@@ -1,5 +1,6 @@
 import {
   createContext,
+  useEffect,
   useMemo,
   useState,
   type Dispatch,
@@ -8,6 +9,7 @@ import {
 } from 'react';
 
 import type { SelectedAnswer } from '@/components/Question/index.types';
+import { Questions } from '@/components/Question/index.constants';
 
 const initialSelectedAnswer: SelectedAnswer = {
   i: 0,
@@ -21,6 +23,7 @@ const initialSelectedAnswer: SelectedAnswer = {
 } as const;
 
 interface Props {
+  isFinished: boolean;
   currentQuestion: number;
   setCurrentQuestion: Dispatch<SetStateAction<number>>;
   selectedAnswers: SelectedAnswer;
@@ -28,6 +31,7 @@ interface Props {
 }
 
 export const QuestionContext = createContext<Props>({
+  isFinished: false,
   currentQuestion: 1,
   setCurrentQuestion: () => {},
   selectedAnswers: { ...initialSelectedAnswer },
@@ -35,10 +39,22 @@ export const QuestionContext = createContext<Props>({
 });
 
 const QuestionProvider = ({ children }: PropsWithChildren<unknown>) => {
+  const [isFinished, setIsFinished] = useState(false);
   const [currentQuestion, setCurrentQuestion] = useState(1);
   const [selectedAnswers, setSelectedAnswers] = useState({
     ...initialSelectedAnswer,
   });
+
+  useEffect(() => {
+    const replyCount = Object.values(selectedAnswers).reduce(
+      (prev, curr) => prev + curr,
+      0,
+    );
+
+    if (replyCount === Questions.length) {
+      setIsFinished(true);
+    }
+  }, [selectedAnswers, setIsFinished]);
 
   const value = useMemo(
     () => ({
@@ -46,8 +62,9 @@ const QuestionProvider = ({ children }: PropsWithChildren<unknown>) => {
       setCurrentQuestion,
       selectedAnswers,
       setSelectedAnswers,
+      isFinished,
     }),
-    [currentQuestion, setCurrentQuestion, selectedAnswers],
+    [isFinished, currentQuestion, setCurrentQuestion, selectedAnswers],
   );
 
   return (
