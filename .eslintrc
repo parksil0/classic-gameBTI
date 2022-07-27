@@ -3,10 +3,11 @@
     "browser": true,
     "node": true
   },
-  "plugins": ["@typescript-eslint", "prettier", "import"],
+  "plugins": ["@typescript-eslint", "prettier", "import", "react-hooks"],
   "extends": [
     "plugin:@typescript-eslint/eslint-recommended",
     "plugin:@typescript-eslint/recommended",
+    "plugin:react-hooks/recommended",
     "plugin:import/recommended",
     "plugin:prettier/recommended",
     "airbnb",
@@ -85,7 +86,9 @@
     "import/newline-after-import": "error",
     "@typescript-eslint/no-empty-function": "off",
     "no-unused-vars": "off",
-    "@typescript-eslint/no-unused-vars": ["error"]
+    "@typescript-eslint/no-unused-vars": ["error"],
+    "react-hooks/rules-of-hooks": "error",
+    "react-hooks/exhaustive-deps": "warn"
   },
   "globals": {
     "React": "writable",
