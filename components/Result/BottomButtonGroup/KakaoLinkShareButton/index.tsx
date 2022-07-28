@@ -30,8 +30,8 @@ const KakaoLinkShareButton = () => {
         imageUrl:
           'https://user-images.githubusercontent.com/41149744/181452591-c2c52272-a4bc-4f4c-83a4-871574918d92.png',
         link: {
-          mobileWebUrl: 'https://developers.kakao.com',
-          webUrl: 'https://developers.kakao.com',
+          mobileWebUrl: window.location.href,
+          webUrl: window.location.href,
         },
       },
     });
