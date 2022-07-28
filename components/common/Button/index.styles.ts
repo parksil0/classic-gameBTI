@@ -3,22 +3,32 @@ import styled from '@emotion/styled';
 
 import type { RemoveAllOptionalProps } from '@/types/util';
 import { BUTTON_CORNER_POSITIONS } from '@/constants/button';
+import type { TextProps } from '../Text/index.types';
 import type { ButtonProps } from './index.types';
 
-interface Props extends RemoveAllOptionalProps<ButtonProps> {}
+interface Props
+  extends RemoveAllOptionalProps<ButtonProps>,
+    RemoveAllOptionalProps<TextProps> {}
 
 export const Button = styled.button<Props>`
   ${({ radius }) =>
-    radius &&
+    Boolean(radius) &&
     css`
       border-radius: ${radius}px;
     `}
 
-  padding: ${({ paddingTop, paddingRight, paddingBottom, paddingLeft }) =>
-    `${paddingTop}px ${paddingRight}px ${paddingBottom}px ${paddingLeft}px;`};
-
+  display: flex;
+  align-items: center;
+  padding: ${({ paddingX, paddingY }) => `${paddingY}px ${paddingX}px`};
+  margin: ${({ marginTop, marginRight, marginBottom, marginLeft }) =>
+    `${marginTop}px ${marginRight}px ${marginBottom}px ${marginLeft}px;`};
   background-color: ${({ theme, backgroundColor }) =>
     theme.color[backgroundColor]};
+  color: ${({ theme, color }) => theme.color[color]};
+  font-size: ${({ theme, variant }) => theme.fontSize[variant]};
+  font-weight: ${({ fontWeight }) => fontWeight};
+  line-height: ${({ theme, variant }) => theme.lineHeight[variant]};
+  text-align: ${({ textAlign }) => textAlign};
 `;
 
 export const ButtonCornerPositionsWrapper = styled.div<{
