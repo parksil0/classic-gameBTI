@@ -18,7 +18,7 @@ const KakaoLinkShareButton = () => {
     const { Kakao: kakao } = window;
 
     if (!kakao.isInitialized()) {
-      kakao.init(process.env.KAKAO_DEVELOPERS_JAVASCRIPT_KEY);
+      kakao.init('aec0004e09fa3e115538abdfc91ebbfd');
     }
 
     window.Kakao.Share.createDefaultButton({
@@ -30,8 +30,8 @@ const KakaoLinkShareButton = () => {
         imageUrl:
           'https://user-images.githubusercontent.com/41149744/181452591-c2c52272-a4bc-4f4c-83a4-871574918d92.png',
         link: {
-          mobileWebUrl: window.location.href,
-          webUrl: window.location.href,
+          mobileWebUrl: window.location.origin,
+          webUrl: window.location.origin,
         },
       },
     });
